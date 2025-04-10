@@ -14,6 +14,7 @@ This tool is a Python reimplementation of the original [msd2smf.rb](https://kuro
 
 ```bash
 python msd2smf.py [path]
+```
 
 - [path] should be the directory containing .msd files.
 - All .msd files in the directory will be automatically converted.
