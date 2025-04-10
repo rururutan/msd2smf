@@ -5,6 +5,9 @@
 # and converts it into a valid Standard MIDI File (SMF). It supports multiple events
 # including short MIDI messages, tempo changes, and SysEx events. Loop points are
 # also marked using Meta Marker events.
+#
+# This file is licensed under the MIT License.
+#
 
 import struct
 import os
