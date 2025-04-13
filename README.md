@@ -28,3 +28,7 @@ Python 3.6 or higher
 
 This project is licensed under the MIT License.
 
+## Extra
+
+The C language implementation is in the c_impl folder.
+
