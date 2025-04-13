@@ -1,5 +1,8 @@
-# msd2smf.py - A converter from MSD (Used by IDES Windows games) format to standard MIDI (SMF) format
+# msd2smf.py - Convert from MSD (Used by IDES Windows games) format to standard MIDI (SMF) format
+# Copyright (C) 2025  Ru^3
+
 # This script is based on msd2smf.rb created by Silver-Hirame.
+# Copyright (C) 2007  Silver Hirame
 # 
 # This script parses a binary MSD file, extracts timing and MIDI message-like data,
 # and converts it into a valid Standard MIDI File (SMF). It supports multiple events
@@ -129,7 +132,7 @@ def convert_msd_to_midi(msd_bytes):
     for i, pkt in enumerate(packets):
         if pkt["This ID"] == packets[-1]["Next ID"]:
             # Loop start marker (Meta 0x06)
-            track_data.append(to_smf_metaevent(0x06, b'loopstart', deltatime))
+            track_data.append(to_smf_metaevent(0x06, b'loopStart', deltatime))
             deltatime = 0
             loop = True
 
@@ -141,7 +144,7 @@ def convert_msd_to_midi(msd_bytes):
 
     if loop:
         # Loop end marker (Meta 0x06)
-        track_data.append(to_smf_metaevent(0x06, b'loopend', deltatime))
+        track_data.append(to_smf_metaevent(0x06, b'loopEnd', deltatime))
         deltatime = 0
 
     # End of track marker
